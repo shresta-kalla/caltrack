@@ -3,3 +3,5 @@ const String homeRoute = '/';
 const String loginRoute = '/login';
 const String signUpRoute = '/sign_up';
 const String dashboardRoute = '/dashboard';
+const String profileRoute = '/profile';
+const String logRoute = '/log';

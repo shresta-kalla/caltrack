@@ -45,7 +45,7 @@ final Map<String, Users> initialData = {
 };
 
 class UserSpecific with ChangeNotifier {
-  final Map<String, Users> _userDatabase = {};
+  final Map<String, Users> _userDatabase = initialData;
   Users? _currentUser;
 
   UserSpecific({Map<String, Users>? initialData}) {
@@ -74,7 +74,6 @@ class UserSpecific with ChangeNotifier {
     }
     return false;
   }
-
 
   List signUp(
       String firstName,
@@ -112,15 +111,15 @@ class UserSpecific with ChangeNotifier {
   }
 
   bool editProfile(
-      String firstName,
-      String lastName,
-      String userName,
-      String age,
-      String password,
-      String height,
-      String weight,
-      String gender,
-      ) {
+    String firstName,
+    String lastName,
+    String userName,
+    String age,
+    String password,
+    String height,
+    String weight,
+    String gender,
+  ) {
     final oldUser = _userDatabase[currentUser?.userName];
     if (oldUser == null) {
       return false; // Handle the case where the current user is not found
