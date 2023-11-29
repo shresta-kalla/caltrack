@@ -47,11 +47,10 @@ final Map<String, Users> initialData = {
 class UserSpecific with ChangeNotifier {
   final Map<String, Users> _userDatabase = initialData;
   Users? _currentUser;
+  bool _isLoggedIn = false;
 
   UserSpecific({Map<String, Users>? initialData}) {
-    print("Initializing UserSpecific with data: $initialData");
     _userDatabase.addAll(initialData ?? {});
-    print("UserDatabase after initialization: $_userDatabase");
   }
 
   bool login(String userName, String password) {
@@ -154,8 +153,15 @@ class UserSpecific with ChangeNotifier {
     return true;
   }
 
+  bool get isLoggedIn => _isLoggedIn;
+
   void logout() {
     _currentUser = null;
+    notifyListeners();
+  }
+
+  void setLoggedIn(bool value) {
+    _isLoggedIn = value;
     notifyListeners();
   }
 

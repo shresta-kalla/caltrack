@@ -18,9 +18,9 @@ class _LoginPageState extends State<LoginPage> {
   String userNameInput = "";
   String passwordInput = "";
   var userNameValidator =
-  ValidationBuilder(requiredMessage: "UserName is required!").build();
+      ValidationBuilder(requiredMessage: "UserName is required!").build();
   var passwordValidator =
-  ValidationBuilder(requiredMessage: "Password is required!").build();
+      ValidationBuilder(requiredMessage: "Password is required!").build();
   bool isError = false;
 
   final _userNameController = TextEditingController();
@@ -132,15 +132,6 @@ class _LoginPageState extends State<LoginPage> {
                       if (_formKey.currentState!.validate()) {
                         _formKey.currentState?.save();
 
-                        showDialog(
-                          context: context,
-                          barrierDismissible: false,
-                          builder: (BuildContext context) {
-                            return Center(
-                              child: CircularProgressIndicator(),
-                            );
-                          },
-                        );
 
                         bool loginResult = await userSpecificProvider.login(
                           _userNameController.text,
@@ -150,8 +141,11 @@ class _LoginPageState extends State<LoginPage> {
                         Navigator.pop(context); // Hide loading indicator
 
                         if (loginResult) {
-                          // Navigate to the dashboard
-                          Navigator.pushNamed(context, '/dashboard');
+                          // Update the user-specific provider to indicate the user is logged in
+                          userSpecificProvider.setLoggedIn(true);
+
+                          // Navigate to the AppNavigation widget and replace the current route
+                          Navigator.pushReplacementNamed(context, "/app_navigation");
                         } else {
                           setState(() => isError = true);
                         }
@@ -175,13 +169,14 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                     ),
                   ),
+
                 ),
                 const SizedBox(height: 8),
                 isError == true
                     ? const Text(
-                  "There is no account found, please try again",
-                  style: TextStyle(color: Colors.red),
-                )
+                        "There is no account found, please try again",
+                        style: TextStyle(color: Colors.red),
+                      )
                     : const SizedBox(),
                 const SizedBox(height: 9),
                 Row(

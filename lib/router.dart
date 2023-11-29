@@ -9,6 +9,7 @@ import 'package:caltrack/view_models/user_specific_view_model.dart';
 import 'package:caltrack/models/dashboard.dart';
 import 'package:caltrack/view_models/dashboard_view_model.dart';
 import 'package:caltrack/views/dashboard_view.dart';
+import 'package:caltrack/views/app_navigation.dart';
 
 
 
@@ -26,6 +27,10 @@ class Router {
       case dashboardRoute:
         return MaterialPageRoute(
           builder: (_) => _buildUserSpecificProvider(DashboardPage()),
+        );
+      case appNavigationRoute:
+        return MaterialPageRoute(
+          builder: (_) => _buildUserSpecificProvider(AppNavigation()),
         );
       default:
         return MaterialPageRoute(
