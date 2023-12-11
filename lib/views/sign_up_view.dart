@@ -285,31 +285,32 @@ class SignUpPageState extends State<SignUpPage> {
   }
 
   Widget _buildRegisterButton() {
-    return InkWell(
-      onTap: () {
-        if (_formKey.currentState!.validate()) {
-          _formKey.currentState?.save();
+      return GestureDetector(
+        onTap: () {
+          if (_formKey.currentState!.validate()) {
+            _formKey.currentState?.save();
 
-          var createAccount = context.read<UserSpecific>().signUp(
-                firstNameInput,
-                lastNameInput,
-                userNameInput,
-                passwordInput,
-                confirmPasswordInput,
-                ageInput,
-                heightInput,
-                weightInput,
-                genderInput,
-              );
+            var createAccount = context.read<UserSpecific>().signUp(
+              firstNameInput,
+              lastNameInput,
+              userNameInput,
+              passwordInput,
+              confirmPasswordInput,
+              ageInput,
+              heightInput,
+              weightInput,
+              genderInput,
+            );
 
-          if (createAccount[0] == false) {
-            setState((() => isError = createAccount));
-          } else {
-            setState((() => isError = null));
-            GoRouter.of(context).go("/login");
+            if (createAccount[0] == false) {
+              setState(() => isError = createAccount);
+            } else {
+              setState(() => isError = null);
+
+              Navigator.pushNamed(context, "/login");
+            }
           }
-        }
-      },
+        },
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 25.0),
         child: Container(
