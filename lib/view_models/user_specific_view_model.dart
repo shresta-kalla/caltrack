@@ -1,5 +1,6 @@
-import 'package:flutter/material.dart';
-import 'package:caltrack/models/users.dart';
+import 'package:flutter/cupertino.dart';
+
+import '../models/users.dart';
 
 final Map<String, Users> initialData = {
   "sarah02": Users(
@@ -46,7 +47,7 @@ final Map<String, Users> initialData = {
 
 class UserSpecific with ChangeNotifier {
   final Map<String, Users> _userDatabase = initialData;
-  Users? _currentUser;
+  Users? _currentUser = initialData.entries.first.value;
   bool _isLoggedIn = false;
 
   UserSpecific({Map<String, Users>? initialData}) {
@@ -66,6 +67,7 @@ class UserSpecific with ChangeNotifier {
 
         if (user.password == password) {
           _currentUser = user;
+          print(_currentUser?.userName);
           notifyListeners();
           return true;
         }
@@ -110,18 +112,19 @@ class UserSpecific with ChangeNotifier {
   }
 
   bool editProfile(
-    String firstName,
-    String lastName,
-    String userName,
-    String age,
-    String password,
-    String height,
-    String weight,
-    String gender,
-  ) {
-    final oldUser = _userDatabase[currentUser?.userName];
+      String firstName,
+      String lastName,
+      String userName,
+      String password,
+      String age,
+      String gender,
+      String height,
+      String weight,
+      ) {
+
+    final oldUser = _userDatabase[_currentUser?.userName];
     if (oldUser == null) {
-      return false; // Handle the case where the current user is not found
+      return false;
     }
 
     oldUser.firstName = firstName;
@@ -129,9 +132,9 @@ class UserSpecific with ChangeNotifier {
     oldUser.userName = userName;
     oldUser.password = password;
     oldUser.age = age;
+    oldUser.gender = gender;
     oldUser.height = height;
     oldUser.weight = weight;
-    oldUser.gender = gender;
 
     _userDatabase[userName] = oldUser;
 
@@ -139,16 +142,11 @@ class UserSpecific with ChangeNotifier {
       _userDatabase.remove(currentUser?.userName);
     }
 
-    currentUser?.firstName = firstName;
-    currentUser?.lastName = lastName;
-    currentUser?.userName = userName;
-    currentUser?.password = password;
-    currentUser?.age = age;
-    currentUser?.height = height;
-    currentUser?.weight = weight;
-    currentUser?.gender = gender;
+    _currentUser = oldUser;
 
     notifyListeners();
+
+
 
     return true;
   }
