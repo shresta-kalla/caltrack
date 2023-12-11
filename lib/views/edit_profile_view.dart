@@ -60,6 +60,51 @@ class EditProfileState extends State<EditProfile> {
       ),
     );
   }
+  void showLogoutDialog(BuildContext context) {
+    Users? currentUser = Provider.of<UserSpecific>(context, listen: false).currentUser;
+
+    if (currentUser?.userName != null) {
+      showDialog<String>(
+        context: context,
+        builder: (BuildContext context) => AlertDialog(
+          title: const Text('Hold on!'),
+          content: const Text('Are you sure you want to log out?'),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(context, 'Cancel'),
+              child: const Text(
+                'Cancel',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 15.0,
+                ),
+              ),
+            ),
+            GestureDetector(
+              onTap: () {
+                // Use GoRouter to navigate to the logout route
+                Navigator.pushNamed(context, "/login");
+              },
+              child: const Padding(
+                padding: EdgeInsets.all(8.0),
+                child: Text(
+                  'Logout',
+                  style: TextStyle(
+                    fontSize: 15.0,
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+      );
+    } else {
+      // Proceed with the login logic here
+      // For example, navigate to the login page directly
+      Navigator.pushNamed(context, "/login");
+    }
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -75,6 +120,18 @@ class EditProfileState extends State<EditProfile> {
           onPressed: (() => GoRouter.of(context).pop()),
         ),
         title: _styledText('Edit Profile', Colors.black, fontSize: 24.0),
+        actions: [
+          GestureDetector(
+            onTap: () {
+              // Show the logout dialog
+              showLogoutDialog(context);
+            },
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Icon(Icons.logout, color: Colors.black),
+            ),
+          ),
+        ],
       ),
       body: Form(
         key: formKey,
@@ -338,3 +395,4 @@ class EditProfileState extends State<EditProfile> {
     );
   }
 }
+
