@@ -4,23 +4,23 @@ import 'package:caltrack/models/log.dart';
 
 final Map<String, List<Log>> LoginitialData = {
   "2023-01-17": [
-    Log(date: "2023-01-17", result: "Food type: pizza\nCalories: 300")
+    Log(date: "2023-01-17", result: "Food Type: Pizza\nCalories: 300")
   ],
   "2023-07-07": [
     Log(
         date: "2023-07-07",
         result:
-            "Exercise type: Running\nDuration: 30\nBurned Calories: 276.03 calories"),
-    Log(date: "2023-07-07", result: "Food type: fries\nCalories: 365")
+            "Exercise Type: Running\nDuration: 30 minutes \nBurned Calories: 276.03 calories"),
+    Log(date: "2023-07-07", result: "Food Type: Fries\nCalories: 365")
   ],
   "2023-12-08": [
     Log(
         date: "2023-12-08",
         result:
-            "Exercise type: Swimming\nDuration: 20\nBurned Calories: 131.68 calories")
+            "Exercise Type: Swimming\nDuration: 20 minutes \nBurned Calories: 131.68 calories")
   ],
   "2023-02-07": [
-    Log(date: "2023-02-07", result: "Food type: burger\nCalories: 250")
+    Log(date: "2023-02-07", result: "Food Type: Burger\nCalories: 250")
   ],
 };
 
