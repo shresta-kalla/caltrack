@@ -115,10 +115,6 @@ class EditProfileState extends State<EditProfile> {
         backgroundColor: Colors.white,
         elevation: 1,
         centerTitle: true,
-        leading: IconButton(
-          icon: const Icon(Icons.chevron_left, color: Colors.black),
-          onPressed: (() => GoRouter.of(context).pop()),
-        ),
         title: _styledText('Edit Profile', Colors.black, fontSize: 24.0),
         actions: [
           GestureDetector(
