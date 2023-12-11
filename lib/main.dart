@@ -7,6 +7,8 @@ import 'package:caltrack/view_models/user_specific_view_model.dart';
 import 'package:caltrack/models/log.dart';
 import 'package:caltrack/view_models/log_view_model.dart';
 
+
+final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 void main() {
   runApp(
     MultiProvider(
@@ -25,6 +27,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      navigatorKey: navigatorKey,
       onGenerateRoute: LocalRouter.Router.generateRoute,
       initialRoute: loginRoute,
     );
