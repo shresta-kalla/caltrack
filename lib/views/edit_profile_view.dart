@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:form_validator/form_validator.dart';
 import 'package:go_router/go_router.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:caltrack/models/users.dart';
 import 'package:caltrack/view_models/user_specific_view_model.dart';
@@ -17,6 +18,7 @@ class EditProfileState extends State<EditProfile> {
 
   final formKey = GlobalKey<FormState>();
 
+
   String firstNameInput = "";
   String lastNameInput = "";
   String userInput = "";
@@ -28,42 +30,51 @@ class EditProfileState extends State<EditProfile> {
   String weightInput = "";
 
   var firstNameValidator =
-      ValidationBuilder(requiredMessage: "First Name is required").build();
+  ValidationBuilder(requiredMessage: "First Name is required").build();
   var lastNameValidator =
-      ValidationBuilder(requiredMessage: "Last Name is required").build();
+  ValidationBuilder(requiredMessage: "Last Name is required").build();
   var userInputValidator =
-      ValidationBuilder(requiredMessage: "UserName is required").build();
+  ValidationBuilder(requiredMessage: "UserName is required").build();
   var passwordValidator =
-      ValidationBuilder(requiredMessage: "Password is required").build();
+  ValidationBuilder(requiredMessage: "Password is required").build();
   var confirmPasswordValidator =
-      ValidationBuilder(requiredMessage: "Confirm Password is required")
-          .build();
+  ValidationBuilder(requiredMessage: "Confirm Password is required")
+      .build();
   var ageInputValidator =
-      ValidationBuilder(requiredMessage: "Age is required").build();
+  ValidationBuilder(requiredMessage: "Age is required").build();
   var genderInputValidator =
-      ValidationBuilder(requiredMessage: "Gender is required").build();
+  ValidationBuilder(requiredMessage: "Gender is required").build();
   var heightInputValidator =
-      ValidationBuilder(requiredMessage: "Height is required").build();
+  ValidationBuilder(requiredMessage: "Height is required").build();
   var weightInputValidator =
-      ValidationBuilder(requiredMessage: "Weight is required").build();
+  ValidationBuilder(requiredMessage: "Weight is required").build();
 
   List? isError;
+  Widget _styledText(String text, Color color, {double fontSize = 20.0}) {
+    return Text(
+      text,
+      style: GoogleFonts.adamina(
+        fontWeight: FontWeight.bold,
+        fontSize: fontSize,
+        color: color,
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
     Users? currentUser = context.watch<UserSpecific>().currentUser;
-
     return Scaffold(
-      backgroundColor: Colors.yellow[200],
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.yellow[200],
+        backgroundColor: Colors.white,
         elevation: 1,
-        centerTitle: false,
+        centerTitle: true,
         leading: IconButton(
           icon: const Icon(Icons.chevron_left, color: Colors.black),
           onPressed: (() => GoRouter.of(context).pop()),
         ),
-        title: const Text('Edit Profile'),
+        title: _styledText('Edit Profile', Colors.black, fontSize: 24.0),
       ),
       body: Form(
         key: formKey,
@@ -75,19 +86,20 @@ class EditProfileState extends State<EditProfile> {
             },
             child: ListView(
               children: [
-                const SizedBox(height: 30),
+                const SizedBox(height: 5),
                 Padding(
-                  padding: const EdgeInsets.only(bottom: 30),
+                  padding: const EdgeInsets.only(bottom: 5),
                   child: TextFormField(
                     obscureText: false,
                     onSaved: ((value) =>
                         setState(() => firstNameInput = value!)),
                     validator: firstNameValidator,
+                    initialValue: currentUser?.firstName ?? "",
                     decoration: InputDecoration(
-                      contentPadding: const EdgeInsets.only(bottom: 5),
+                      contentPadding: const EdgeInsets.symmetric(
+                          vertical: 5, horizontal: 5),
                       labelText: "First Name",
                       floatingLabelBehavior: FloatingLabelBehavior.always,
-                      hintText: currentUser?.firstName ?? "",
                       hintStyle: const TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
@@ -96,18 +108,20 @@ class EditProfileState extends State<EditProfile> {
                     ),
                   ),
                 ),
+                const SizedBox(height: 5),
                 Padding(
-                  padding: const EdgeInsets.only(bottom: 30),
+                  padding: const EdgeInsets.only(bottom: 5),
                   child: TextFormField(
                     obscureText: false,
                     onSaved: ((value) =>
                         setState(() => lastNameInput = value!)),
                     validator: lastNameValidator,
+                    initialValue: currentUser?.lastName ?? "",
                     decoration: InputDecoration(
-                      contentPadding: const EdgeInsets.only(bottom: 5),
+                      contentPadding: const EdgeInsets.symmetric(
+                          vertical: 5, horizontal: 5),
                       labelText: "Last Name",
                       floatingLabelBehavior: FloatingLabelBehavior.always,
-                      hintText: currentUser?.lastName ?? "",
                       hintStyle: const TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
@@ -116,17 +130,19 @@ class EditProfileState extends State<EditProfile> {
                     ),
                   ),
                 ),
+                const SizedBox(height: 5),
                 Padding(
-                  padding: const EdgeInsets.only(bottom: 30),
+                  padding: const EdgeInsets.only(bottom: 5),
                   child: TextFormField(
                     obscureText: false,
                     onSaved: ((value) => setState(() => userInput = value!)),
                     validator: userInputValidator,
+                    initialValue: currentUser?.userName ?? "",
                     decoration: InputDecoration(
-                      contentPadding: const EdgeInsets.only(bottom: 5),
+                      contentPadding: const EdgeInsets.symmetric(
+                          vertical: 5, horizontal: 5),
                       labelText: "UserName",
                       floatingLabelBehavior: FloatingLabelBehavior.always,
-                      hintText: currentUser?.userName ?? "",
                       hintStyle: const TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
@@ -135,15 +151,18 @@ class EditProfileState extends State<EditProfile> {
                     ),
                   ),
                 ),
+                const SizedBox(height: 5),
                 Padding(
-                  padding: const EdgeInsets.only(bottom: 30),
+                  padding: const EdgeInsets.only(bottom: 5),
                   child: TextFormField(
                     obscureText: isHidden,
                     onSaved: ((value) =>
                         setState(() => passwordInput = value!)),
                     validator: passwordValidator,
+                    initialValue: currentUser?.password ?? "",
                     decoration: InputDecoration(
-                      contentPadding: const EdgeInsets.only(bottom: 5),
+                      contentPadding: const EdgeInsets.symmetric(
+                          vertical: 5, horizontal: 5),
                       suffixIcon: IconButton(
                         icon: const Icon(Icons.remove_red_eye,
                             color: Colors.grey),
@@ -155,7 +174,6 @@ class EditProfileState extends State<EditProfile> {
                       ),
                       labelText: "Password",
                       floatingLabelBehavior: FloatingLabelBehavior.always,
-                      hintText: "**********",
                       hintStyle: const TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
@@ -164,17 +182,20 @@ class EditProfileState extends State<EditProfile> {
                     ),
                   ),
                 ),
+                const SizedBox(height: 5),
                 Padding(
-                  padding: const EdgeInsets.only(bottom: 30),
+                  padding: const EdgeInsets.only(bottom: 5),
                   child: TextFormField(
                     obscureText: false,
                     onSaved: (value) => setState(() => ageInput = value!),
                     validator: ageInputValidator,
+                    initialValue: currentUser?.age ?? "",
                     decoration: InputDecoration(
-                      contentPadding: const EdgeInsets.only(bottom: 5),
+                      contentPadding: const EdgeInsets.symmetric(
+                          vertical: 5, horizontal: 5),
                       labelText: "Age",
                       floatingLabelBehavior: FloatingLabelBehavior.always,
-                      hintText: currentUser?.age.toString() ?? "",
+
                       hintStyle: const TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
@@ -183,18 +204,19 @@ class EditProfileState extends State<EditProfile> {
                     ),
                   ),
                 ),
+                const SizedBox(height: 5),
                 Padding(
-                  padding: const EdgeInsets.only(bottom: 30),
+                  padding: const EdgeInsets.only(bottom: 5),
                   child: TextFormField(
                     obscureText: false,
-                    onSaved: (value) =>
-                        setState(() => genderInput = value!), // Add this line
-                    validator: genderInputValidator, // Add this line
+                    onSaved: (value) => setState(() => genderInput = value!),
+                    validator: genderInputValidator,
+                    initialValue: currentUser?.gender ?? "",
                     decoration: InputDecoration(
-                      contentPadding: const EdgeInsets.only(bottom: 5),
-                      labelText: "Gender", // Add this line
+                      contentPadding: const EdgeInsets.symmetric(
+                          vertical: 5, horizontal: 5),
+                      labelText: "Gender",
                       floatingLabelBehavior: FloatingLabelBehavior.always,
-                      hintText: currentUser?.gender ?? "",
                       hintStyle: const TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
@@ -203,17 +225,19 @@ class EditProfileState extends State<EditProfile> {
                     ),
                   ),
                 ),
+                const SizedBox(height: 5),
                 Padding(
-                  padding: const EdgeInsets.only(bottom: 30),
+                  padding: const EdgeInsets.only(bottom: 5),
                   child: TextFormField(
                     obscureText: false,
                     onSaved: (value) => setState(() => heightInput = value!),
                     validator: heightInputValidator,
+                    initialValue: currentUser?.height.toString() ?? "",
                     decoration: InputDecoration(
-                      contentPadding: const EdgeInsets.only(bottom: 5),
+                      contentPadding: const EdgeInsets.symmetric(
+                          vertical: 5, horizontal: 5),
                       labelText: "Height",
                       floatingLabelBehavior: FloatingLabelBehavior.always,
-                      hintText: currentUser?.height.toString() ?? "",
                       hintStyle: const TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
@@ -222,17 +246,19 @@ class EditProfileState extends State<EditProfile> {
                     ),
                   ),
                 ),
+                const SizedBox(height: 5),
                 Padding(
-                  padding: const EdgeInsets.only(bottom: 30),
+                  padding: const EdgeInsets.only(bottom: 5),
                   child: TextFormField(
                     obscureText: false,
                     onSaved: (value) => setState(() => weightInput = value!),
                     validator: weightInputValidator,
+                    initialValue: currentUser?.weight.toString() ?? "",
                     decoration: InputDecoration(
-                      contentPadding: const EdgeInsets.only(bottom: 5),
+                      contentPadding: const EdgeInsets.symmetric(
+                          vertical: 5, horizontal: 5),
                       labelText: "Weight",
                       floatingLabelBehavior: FloatingLabelBehavior.always,
-                      hintText: currentUser?.weight.toString() ?? "",
                       hintStyle: const TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
@@ -241,78 +267,64 @@ class EditProfileState extends State<EditProfile> {
                     ),
                   ),
                 ),
-                const SizedBox(height: 30),
-                const SizedBox(height: 30),
+                const SizedBox(height: 5),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    OutlinedButton(
-                      onPressed: () => GoRouter.of(context).pop(),
-                      child: const Text(
-                        "Cancel",
-                        style: TextStyle(
-                          fontSize: 15,
-                          letterSpacing: 2,
-                          color: Colors.black,
+                    Align(
+                      alignment: Alignment.center,
+                      child: ElevatedButton(
+                        onPressed: () {
+                          if (formKey.currentState!.validate()) {
+                            formKey.currentState?.save();
+
+                            debugPrint(formKey.currentState.toString());
+                            debugPrint(firstNameInput);
+                            debugPrint(lastNameInput);
+                            debugPrint(userInput);
+                            debugPrint(passwordInput);
+                            debugPrint(ageInput);
+                            debugPrint(genderInput);
+                            debugPrint(heightInput);
+                            debugPrint(weightInput);
+
+                            var editProfileResult =
+                            context.read<UserSpecific>().editProfile(
+                              firstNameInput,
+                              lastNameInput,
+                              userInput,
+                              passwordInput,
+                              ageInput,
+                              genderInput,
+                              heightInput,
+                              weightInput,
+                            );
+
+                            //formKey.currentState?.reset();
+
+                            ScaffoldMessenger.of(context)
+                                .showSnackBar(const SnackBar(
+                              content: Text("Profile successfully edited"),
+                            ));
+
+                            debugPrint(editProfileResult.toString());
+                          }
+                        },
+                        child: const Text(
+                          "Save",
+                          style: TextStyle(
+                            fontSize: 15,
+                            letterSpacing: 2,
+                            color: Colors.white,
+                          ),
                         ),
-                      ),
-                      style: OutlinedButton.styleFrom(
-                        padding: const EdgeInsets.symmetric(horizontal: 50),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                      ),
-                    ),
-                    ElevatedButton(
-                      onPressed: () {
-                        if (formKey.currentState!.validate()) {
-                          formKey.currentState?.save();
-
-                          debugPrint(formKey.currentState.toString());
-                          debugPrint(firstNameInput);
-                          debugPrint(lastNameInput);
-                          debugPrint(userInput);
-                          debugPrint(passwordInput);
-                          debugPrint(ageInput);
-                          debugPrint(genderInput);
-                          debugPrint(heightInput);
-                          debugPrint(weightInput);
-
-                          var editProfileResult =
-                              context.read<UserSpecific>().editProfile(
-                                    firstNameInput,
-                                    lastNameInput,
-                                    userInput,
-                                    passwordInput,
-                                    ageInput,
-                                    genderInput,
-                                    heightInput,
-                                    weightInput,
-                                  );
-
-                          formKey.currentState?.reset();
-
-                          ScaffoldMessenger.of(context)
-                              .showSnackBar(const SnackBar(
-                            content: Text("Profile successfully edited"),
-                          ));
-
-                          debugPrint(editProfileResult.toString());
-                        }
-                      },
-                      child: const Text(
-                        "Save",
-                        style: TextStyle(
-                          fontSize: 15,
-                          letterSpacing: 2,
-                          color: Colors.white,
-                        ),
-                      ),
-                      style: ElevatedButton.styleFrom(
-                        primary: const Color.fromARGB(255, 18, 156, 57),
-                        padding: const EdgeInsets.symmetric(horizontal: 50),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20),
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor:
+                          const Color.fromARGB(255, 180, 140, 255),
+                          padding: const EdgeInsets.symmetric(horizontal: 50),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20),
+                          ),
                         ),
                       ),
                     ),
