@@ -8,9 +8,9 @@ final Map<String, Users> initialData = {
     lastName: "John",
     userName: "sarah02",
     password: "securePassword1",
-    age: "19",
-    height: "67",
-    weight: "120",
+    age: "21",
+    height: "64",
+    weight: "110",
     gender: "Female",
   ),
   "billy1989": Users(
