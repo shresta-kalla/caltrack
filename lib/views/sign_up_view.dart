@@ -29,24 +29,24 @@ class SignUpPageState extends State<SignUpPage> {
   String weightInput = "";
 
   var firstNameValidator =
-  ValidationBuilder(requiredMessage: "First Name is required!").build();
+      ValidationBuilder(requiredMessage: "First Name is required!").build();
   var lastNameValidator =
-  ValidationBuilder(requiredMessage: "Last Name is required!").build();
+      ValidationBuilder(requiredMessage: "Last Name is required!").build();
   var userNameValidator =
-  ValidationBuilder(requiredMessage: "UserName is required!").build();
+      ValidationBuilder(requiredMessage: "UserName is required!").build();
   var passwordValidator =
-  ValidationBuilder(requiredMessage: "Password is required!").build();
+      ValidationBuilder(requiredMessage: "Password is required!").build();
   var ageValidator =
-  ValidationBuilder(requiredMessage: "Age is required!").build();
+      ValidationBuilder(requiredMessage: "Age is required!").build();
   var heightValidator =
-  ValidationBuilder(requiredMessage: "Height is required!").build();
+      ValidationBuilder(requiredMessage: "Height is required!").build();
   var weightValidator =
-  ValidationBuilder(requiredMessage: "Weight is required!").build();
+      ValidationBuilder(requiredMessage: "Weight is required!").build();
   var genderValidator =
-  ValidationBuilder(requiredMessage: "Gender is required!").build();
+      ValidationBuilder(requiredMessage: "Gender is required!").build();
   var confirmPasswordValidator =
-  ValidationBuilder(requiredMessage: "Confirm Password is required!")
-      .build();
+      ValidationBuilder(requiredMessage: "Confirm Password is required!")
+          .build();
 
   List? isError;
 
@@ -76,25 +76,25 @@ class SignUpPageState extends State<SignUpPage> {
                       _buildTextField(
                         "First Name",
                         firstNameValidator,
-                            (value) => setState(() => firstNameInput = value!),
+                        (value) => setState(() => firstNameInput = value!),
                       ),
                       const SizedBox(height: 5),
                       _buildTextField(
                         "Last Name",
                         lastNameValidator,
-                            (value) => setState(() => lastNameInput = value!),
+                        (value) => setState(() => lastNameInput = value!),
                       ),
                       const SizedBox(height: 5),
                       _buildTextField(
                         "Username",
                         userNameValidator,
-                            (value) => setState(() => userNameInput = value!),
+                        (value) => setState(() => userNameInput = value!),
                       ),
                       const SizedBox(height: 5),
                       _buildPasswordField(
                         "Password",
                         passwordValidator,
-                            (value) => setState(() => passwordInput = value!),
+                        (value) => setState(() => passwordInput = value!),
                         isHidden,
                         _togglePasswordView,
                       ),
@@ -102,7 +102,7 @@ class SignUpPageState extends State<SignUpPage> {
                       _buildPasswordField(
                         "Confirm Password",
                         confirmPasswordValidator,
-                            (value) =>
+                        (value) =>
                             setState(() => confirmPasswordInput = value!),
                         isConfirmPasswordHidden,
                         _toggleConfirmPasswordView,
@@ -111,26 +111,28 @@ class SignUpPageState extends State<SignUpPage> {
                       _buildTextField(
                         "Age",
                         ageValidator,
-                            (value) => setState(() => ageInput = value!),
+                        (value) => setState(() => ageInput = value!),
                       ),
                       const SizedBox(height: 5),
                       _buildTextField(
                         "Gender",
                         genderValidator,
-                            (value) => setState(() => genderInput = value!),
+                        (value) => setState(() => genderInput = value!),
                       ),
                       const SizedBox(height: 5),
-                      _buildHeightWeightFields("Height", heightValidator, heightInput, "inches"),
+                      _buildHeightWeightFields(
+                          "Height", heightValidator, heightInput, "inches"),
                       const SizedBox(height: 5),
-                      _buildHeightWeightFields("Weight", weightValidator, weightInput, "lbs"),
+                      _buildHeightWeightFields(
+                          "Weight", weightValidator, weightInput, "lbs"),
                       const SizedBox(height: 5),
                       _buildRegisterButton(),
                       const SizedBox(height: 8),
                       isError != null
                           ? Text(
-                        isError![1],
-                        style: const TextStyle(color: Colors.red),
-                      )
+                              isError![1],
+                              style: const TextStyle(color: Colors.red),
+                            )
                           : const SizedBox()
                     ],
                   ),
@@ -168,10 +170,10 @@ class SignUpPageState extends State<SignUpPage> {
   }
 
   Widget _buildTextField(
-      String hintText,
-      String? Function(String?)? validator,
-      void Function(String?)? onSaved,
-      ) {
+    String hintText,
+    String? Function(String?)? validator,
+    void Function(String?)? onSaved,
+  ) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 25.0),
       child: Container(
@@ -197,14 +199,13 @@ class SignUpPageState extends State<SignUpPage> {
     );
   }
 
-
   Widget _buildPasswordField(
-      String hintText,
-      String? Function(String?)? validator,
-      void Function(String?)? onSaved,
-      bool isHidden,
-      VoidCallback togglePasswordView,
-      ) {
+    String hintText,
+    String? Function(String?)? validator,
+    void Function(String?)? onSaved,
+    bool isHidden,
+    VoidCallback togglePasswordView,
+  ) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 25.0),
       child: Container(
@@ -238,13 +239,12 @@ class SignUpPageState extends State<SignUpPage> {
     );
   }
 
-
   Widget _buildHeightWeightFields(
-      String hintText,
-      String? Function(String?)? validator,
-      String value,
-      String unit,
-      ) {
+    String hintText,
+    String? Function(String?)? validator,
+    String value,
+    String unit,
+  ) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 25.0),
       child: Row(
@@ -284,25 +284,23 @@ class SignUpPageState extends State<SignUpPage> {
     );
   }
 
-
   Widget _buildRegisterButton() {
     return InkWell(
       onTap: () {
         if (_formKey.currentState!.validate()) {
           _formKey.currentState?.save();
 
-          var createAccount =
-          context.read<UserSpecific>().signUp(
-            firstNameInput,
-            lastNameInput,
-            userNameInput,
-            passwordInput,
-            confirmPasswordInput,
-            ageInput,
-            heightInput,
-            weightInput,
-            genderInput,
-          );
+          var createAccount = context.read<UserSpecific>().signUp(
+                firstNameInput,
+                lastNameInput,
+                userNameInput,
+                passwordInput,
+                confirmPasswordInput,
+                ageInput,
+                heightInput,
+                weightInput,
+                genderInput,
+              );
 
           if (createAccount[0] == false) {
             setState((() => isError = createAccount));

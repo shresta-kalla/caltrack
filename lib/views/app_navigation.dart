@@ -5,13 +5,17 @@ import 'package:caltrack/constants.dart';
 import 'package:caltrack/view_models/user_specific_view_model.dart';
 import 'package:caltrack/views/login_view.dart';
 import 'package:caltrack/views/sign_up_view.dart';
+import 'package:caltrack/views/edit_profile_view.dart';
 import 'package:caltrack/views/dashboard_view.dart';
 import 'package:caltrack/constants.dart';
+import 'package:caltrack/view_models/dashboard_view_model.dart';
+import 'package:caltrack/models/log.dart';
+import 'package:caltrack/view_models/log_view_model.dart';
+import 'package:caltrack/views/log_view.dart';
 
 class AppNavigation extends StatefulWidget {
   const AppNavigation({Key? key, this.initialIndex = 0}) : super(key: key);
 
-  // Optional parameter to set the initial index
   final int initialIndex;
 
   @override
@@ -24,7 +28,6 @@ class AppNavigationState extends State<AppNavigation> {
   @override
   void initState() {
     super.initState();
-    // Set the initial index when the widget is created
     _selectedIndex = 1;
   }
 
@@ -33,7 +36,7 @@ class AppNavigationState extends State<AppNavigation> {
       _selectedIndex = index;
 
       if (_selectedIndex == 0) {
-        GoRouter.of(context).go("/login");
+        GoRouter.of(context).go("/profile");
       } else if (_selectedIndex == 1) {
         GoRouter.of(context).go("/dashboard");
       } else if (_selectedIndex == 2) {
@@ -70,9 +73,9 @@ class AppNavigationState extends State<AppNavigation> {
         ],
       ),
       body: <Widget>[
-        LoginPage(),
+        EditProfile(),
         DashboardPage(),
-        SignUpPage(),
+        LogPage(),
       ][_selectedIndex],
     );
   }

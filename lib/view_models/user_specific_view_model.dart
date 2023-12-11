@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:caltrack/models//users.dart';
+import 'package:caltrack/models/users.dart';
 
 final Map<String, Users> initialData = {
   "sarah02": Users(

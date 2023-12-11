@@ -132,7 +132,6 @@ class _LoginPageState extends State<LoginPage> {
                       if (_formKey.currentState!.validate()) {
                         _formKey.currentState?.save();
 
-
                         bool loginResult = await userSpecificProvider.login(
                           _userNameController.text,
                           _passwordController.text,
@@ -145,7 +144,8 @@ class _LoginPageState extends State<LoginPage> {
                           userSpecificProvider.setLoggedIn(true);
 
                           // Navigate to the AppNavigation widget and replace the current route
-                          Navigator.pushReplacementNamed(context, "/app_navigation");
+                          Navigator.pushReplacementNamed(
+                              context, "/app_navigation");
                         } else {
                           setState(() => isError = true);
                         }
@@ -169,7 +169,6 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                     ),
                   ),
-
                 ),
                 const SizedBox(height: 8),
                 isError == true

@@ -1,30 +1,42 @@
 class Dashboard {
   String result;
   String selectedActivityType;
-  String duration;
-  String calories;
   String selectedFoodType;
   String selectedExerciseType;
+  String duration;
+  String age;
+  String gender;
+  String height;
+  String weight;
+  String calories;
   bool saveToLog;
 
   Dashboard({
-    required this.selectedActivityType,
-    required this.selectedExerciseType,
-    required this.selectedFoodType,
-    required this.duration,
-    required this.calories,
     required this.result,
+    required this.selectedActivityType,
+    required this.selectedFoodType,
+    required this.selectedExerciseType,
+    required this.duration,
+    required this.age,
+    required this.gender,
+    required this.height,
+    required this.weight,
+    required this.calories,
     required this.saveToLog,
   });
 
   factory Dashboard.fromJson(Map<String, dynamic> json) {
     return Dashboard(
-      selectedActivityType: json["selectedActivityType"],
-      selectedExerciseType: json["selectedExerciseType"],
-      selectedFoodType: json["selectedFoodType"],
-      duration: json["duration"],
-      calories: json["calories"],
       result: json["result"],
+      selectedActivityType: json["selectedActivityType"],
+      selectedFoodType: json["selectedFoodType"],
+      selectedExerciseType: json["selectedExerciseType"],
+      duration: json["duration"],
+      age: json["age"],
+      gender: json["gender"],
+      height: json["height"],
+      weight: json["weight"],
+      calories: json["calories"],
       saveToLog: json["saveToLog"],
     );
   }
