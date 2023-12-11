@@ -148,6 +148,10 @@ class _LoginPageState extends State<LoginPage> {
                               context, "/app_navigation");
                         } else {
                           setState(() => isError = true);
+                          _userNameController.clear();
+                          _passwordController.clear();
+                          Navigator.pushReplacementNamed(
+                              context, "/login");
                         }
                       }
                     },
