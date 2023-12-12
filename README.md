@@ -13,24 +13,24 @@
   * Username: sarah02
   * Password: securePassword1
 
- * Edit Profile Page
-  * Edit firstname, lastname, username, password, confirm password, age, gender, height and weight data 
- * Click "Save" button once you finish updating data
- * Click logout door icon button on top right of screen to logout
+* Edit Profile Page
+  * Edit firstname, lastname, username, password, confirm password, age, gender, height, and weight data 
+* Click "Save" button once you finish updating data
+* Click logout door icon button on top right of screen to logout
    
  * Dashboard Page (use select activity type dropdown to select which activity you want to enter)
   * Entering food data:
     * Enter name of food item
     * Enter calories food item contained
   * Entering exercise data:
-    * Select exercise type from downdown
+    * Select exercise type from dropdown
     * Enter duration
     * Enter age
     * Enter gender
     * Enter height
     * Enter weight
- * Click checkbox to "save to log" if you wish to add data to log page
- * Click "Submit" button once you finish entering data
+* Click checkbox to "save to log" if you wish to add data to log page
+* Click "Submit" button once you finish entering data
 
  * Log Page
   * Enter date to view calories stored in log database for specific date:
