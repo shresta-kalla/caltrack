@@ -82,7 +82,6 @@ class EditProfileState extends State<EditProfile> {
             ),
             GestureDetector(
               onTap: () {
-                // Use GoRouter to navigate to the logout route
                 Navigator.pushNamed(context, "/login");
               },
               child: const Padding(
@@ -99,8 +98,6 @@ class EditProfileState extends State<EditProfile> {
         ),
       );
     } else {
-      // Proceed with the login logic here
-      // For example, navigate to the login page directly
       Navigator.pushNamed(context, "/login");
     }
   }
@@ -119,7 +116,7 @@ class EditProfileState extends State<EditProfile> {
         actions: [
           GestureDetector(
             onTap: () {
-              // Show the logout dialog
+
               showLogoutDialog(context);
             },
             child: Padding(
