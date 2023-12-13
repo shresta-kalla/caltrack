@@ -8,7 +8,7 @@
  * Go into 'lib' folder and click on the main.dart file
  * Click on 'Get Dependencies' on the top to install packages
  * Connect to Android Emulator(Pixel_3s_API_34_extension_level_7)
- * Click run main.dart
+ * Run configuration main.dart
  * Details to run key tasks are mentioned below
 
 ### Tasks
