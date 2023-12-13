@@ -58,7 +58,11 @@ https://www.figma.com/file/9NuEtMWUnp2JaiTvXS6eNY/CS1635-Deliverable-2?type=whit
 * The Flutter application is a comprehensive calorie-tracking application that utilizes user-provided information. This application creates a profile for each user including age, gender, and weight with an individual log-in to save information. Users can then log their daily calorie intake by inputting which foods they have consumed and their associated calories. Additionally, they also have the option of logging exercise activities based on the activities's duration. The application also allows the user to look back at their calorie intake and daily exercise based on the date on the log page. This application was written in Flutter using Andriod Studio following a Model View View Model architecture. 
 
 ### Login and Signup
-* When the user first opens the app they will directed to the Login page. If they do not already have a user profile account then they will have the option of creating one by clicking on the Signup link. Clicking on the link will redirect the user to the signup page. Once on the signup page, the user will input personal data. The data they will be asked to provide is their first name, last name, username, password, password confirmation, age, gender, height, and weight. Then the user should click the "register" button. 
+* When the user first opens the app they will directed to the Login page. If they do not already have a user profile account then they will have the option of creating one by clicking on the Signup link. Clicking on the link will redirect the user to the signup page. Once on the signup page, the user will input personal data. The data they will be asked to provide is their first name, last name, username, password, password confirmation, age, gender, height, and weight. Then the user should click the "register" button.
+![Alt text](<img width="312" alt="Screen Shot 2023-12-13 at 2 33 08 PM" src="https://github.com/shresta-kalla/caltrack/assets/150719217/87057655-7058-48d8-8dea-837271449021">)
+![Alt text](<img width="312" alt="Screen Shot 2023-12-13 at 2 33 08 PM" src="https://github.com/shresta-kalla/caltrack/assets/150719217/a89818cb-cd96-4c2a-843e-fa56c9372ec7">)
+
+
 
 ### Edit Profile Page
 * The edit profile page should be utilized by the user if any of their profile information has changed. For example, if their weight, height, age, or gender needs adjustment. Additionally, this is the page that should also be utilized if the user wants to change their password. 
