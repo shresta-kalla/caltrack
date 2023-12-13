@@ -59,8 +59,8 @@ https://www.figma.com/file/9NuEtMWUnp2JaiTvXS6eNY/CS1635-Deliverable-2?type=whit
 
 ### Login and Signup
 * When the user first opens the app they will directed to the Login page. If they do not already have a user profile account then they will have the option of creating one by clicking on the Signup link. Clicking on the link will redirect the user to the signup page. Once on the signup page, the user will input personal data. The data they will be asked to provide is their first name, last name, username, password, password confirmation, age, gender, height, and weight. Then the user should click the "register" button.
-![Alt text](<img width="312" alt="Screen Shot 2023-12-13 at 2 33 08 PM" src="https://github.com/shresta-kalla/caltrack/assets/150719217/87057655-7058-48d8-8dea-837271449021">)
-![Alt text](<img width="312" alt="Screen Shot 2023-12-13 at 2 33 08 PM" src="https://github.com/shresta-kalla/caltrack/assets/150719217/a89818cb-cd96-4c2a-843e-fa56c9372ec7">)
+!(<img width="312" alt="Screen Shot 2023-12-13 at 2 33 08 PM" src="https://github.com/shresta-kalla/caltrack/assets/150719217/87057655-7058-48d8-8dea-837271449021">)
+!(<img width="312" alt="Screen Shot 2023-12-13 at 2 33 08 PM" src="https://github.com/shresta-kalla/caltrack/assets/150719217/a89818cb-cd96-4c2a-843e-fa56c9372ec7">)
 
 
 
