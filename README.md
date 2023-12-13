@@ -37,7 +37,7 @@
 * Click the "Submit" button once you finish entering data
 
 ##### Log Page
-* Enter a date to view calories stored in the log database for a specific date:
+* Enter a date(format: YYYY-MM-DD) to view calories stored in the log database for a specific date:
   * Data will be displayed under the "Results" title
   * Selected date will appear before the "Results" title
 
