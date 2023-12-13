@@ -73,7 +73,8 @@ https://www.figma.com/file/9NuEtMWUnp2JaiTvXS6eNY/CS1635-Deliverable-2?type=whit
 <img width="316" alt="Screen Shot 2023-12-13 at 2 38 59 PM" src="https://github.com/shresta-kalla/caltrack/assets/150719217/26470ec6-7482-4fed-978e-ebe198fb44b4">
 
 ### Log Page
-
+* The log page allows the user to enter a specific date to retrieve & display their results at any given time.
+*  
 <img width="313" alt="Screen Shot 2023-12-13 at 2 39 18 PM" src="https://github.com/shresta-kalla/caltrack/assets/150719217/65a3408a-b2dd-4c82-a59e-d5432a45d7ce">
 
 ## Contributors
