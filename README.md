@@ -59,20 +59,20 @@ https://www.figma.com/file/9NuEtMWUnp2JaiTvXS6eNY/CS1635-Deliverable-2?type=whit
 
 ### Login and Signup
 * When the user first opens the app they will directed to the Login page. If they do not already have a user profile account then they will have the option of creating one by clicking on the Signup link. Clicking on the link will redirect the user to the signup page. Once on the signup page, the user will input personal data. The data they will be asked to provide is their first name, last name, username, password, password confirmation, age, gender, height, and weight. Then the user should click the "register" button.
-!(<img width="313" alt="Screen Shot 2023-12-13 at 2 37 22 PM" src="https://github.com/shresta-kalla/caltrack/assets/150719217/e9871a0d-69a2-4a15-bdda-e0636e8b0afb">)
-!(<img width="312" alt="Screen Shot 2023-12-13 at 2 33 08 PM" src="https://github.com/shresta-kalla/caltrack/assets/150719217/a89818cb-cd96-4c2a-843e-fa56c9372ec7">)
+<img width="313" alt="Screen Shot 2023-12-13 at 2 37 22 PM" src="https://github.com/shresta-kalla/caltrack/assets/150719217/e9871a0d-69a2-4a15-bdda-e0636e8b0afb">
+<img width="312" alt="Screen Shot 2023-12-13 at 2 33 08 PM" src="https://github.com/shresta-kalla/caltrack/assets/150719217/a89818cb-cd96-4c2a-843e-fa56c9372ec7">
 
 ### Edit Profile Page
-* The edit profile page should be utilized by the user if any of their profile information has changed. For example, if their weight, height, age, or gender needs adjustment. Additionally, this is the page that should also be utilized if the user wants to change their password. 
-!(<img width="322" alt="Screen Shot 2023-12-13 at 2 38 38 PM" src="https://github.com/shresta-kalla/caltrack/assets/150719217/1f51be11-3016-44ee-916d-556d39013acd">)
+* The edit profile page should be utilized by the user if any of their profile information has changed. For example, if their weight, height, age, or gender needs adjustment. Additionally, this is the page that should also be utilized if the user wants to change their password.
+<img width="322" alt="Screen Shot 2023-12-13 at 2 38 38 PM" src="https://github.com/shresta-kalla/caltrack/assets/150719217/1f51be11-3016-44ee-916d-556d39013acd">
 
 ### Dashboard Page
-* The dashboard page is used when the user wants to input their food intake or their exercise. If the user wants to enter information about their food intake, they would first choose their activity type as food. Then they would input the food they consumed and the corresponding calorie amount. Then if the user would like to keep the input for their log on the log page for that date they would check the "save calculation to log button". If the user would like to enter an exercise input, the user would clock the activity type as exercise. Then the user would choose their exercise type from the drop-down menu and how long they exercised for. The user would also have to input their updated height and weight information on the page as well. Then if they were interested in saving the exercise calculation to their permanent log, they would check the box to "save calculation to log". 
-!(<img width="316" alt="Screen Shot 2023-12-13 at 2 38 59 PM" src="https://github.com/shresta-kalla/caltrack/assets/150719217/26470ec6-7482-4fed-978e-ebe198fb44b4">)
+* The dashboard page is used when the user wants to input their food intake or their exercise. If the user wants to enter information about their food intake, they would first choose their activity type as food. Then they would input the food they consumed and the corresponding calorie amount. Then if the user would like to keep the input for their log on the log page for that date they would check the "save calculation to log button". If the user would like to enter an exercise input, the user would clock the activity type as exercise. Then the user would choose their exercise type from the drop-down menu and how long they exercised for. The user would also have to input their updated height and weight information on the page as well. Then if they were interested in saving the exercise calculation to their permanent log, they would check the box to "save calculation to log".
+<img width="316" alt="Screen Shot 2023-12-13 at 2 38 59 PM" src="https://github.com/shresta-kalla/caltrack/assets/150719217/26470ec6-7482-4fed-978e-ebe198fb44b4">
 
 ### Log Page
 
-!(<img width="313" alt="Screen Shot 2023-12-13 at 2 39 18 PM" src="https://github.com/shresta-kalla/caltrack/assets/150719217/65a3408a-b2dd-4c82-a59e-d5432a45d7ce">)
+<img width="313" alt="Screen Shot 2023-12-13 at 2 39 18 PM" src="https://github.com/shresta-kalla/caltrack/assets/150719217/65a3408a-b2dd-4c82-a59e-d5432a45d7ce">
 
 ## Contributors
 
