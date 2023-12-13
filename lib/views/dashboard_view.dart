@@ -388,7 +388,7 @@ class _DashboardPageState extends State<DashboardPage> {
                         // Handle exercise activity
                         double burnedCalories = calculateCalories();
                         String exerciseResult =
-                            'Exercise Type: $selectedExerciseTypeInput\nDuration: $durationInput\nBurned Calories: ${burnedCalories.toStringAsFixed(2)} calories';
+                            'Exercise Type: $selectedExerciseTypeInput\nDuration: $durationInput minutes\nBurned Calories: ${burnedCalories.toStringAsFixed(2)} calories';
                         print(exerciseResult);
                         results.add(exerciseResult); // Save result to the list
 
