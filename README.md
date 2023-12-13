@@ -48,6 +48,14 @@
 
 ## Personas
 
+* Persona 1: A male high school student named Kyle who is cutting weight for wrestling
+ His motivation to use our app is to monitor his caloric deficit to drop into the weight class he would like. The application will also ensure Kyle’s coaches that he is losing weight in a healthy way based on the plan they determined together. Kyle will use this app by inputting the different foods he eats throughout the day as well as recording his exercise activity. At the weigh-in, the coaches will be able to check the log to see if Kyle's method of losing weight has worked and if it is safe. Need App can fulfill: This app fulfills Kyle’s need for an application that allows him to quickly and efficiently log his calorie intake between classes, while also tracking how many calories he is consuming throughout the day.
+
+*Persona 2: A 65-year-old man with high cholesterol named Gerard
+ Gerard has  high cholesterol and has been told by his doctor to track his calories, food, and exercise. His doctor informed him that exercising can increase HDL cholesterol which is considered to be “good cholesterol” that helps you stay healthy. Gerard is a retiree who can navigate applications but struggles with technology overall. He wants an efficient way to track his exercise, food, and calorie intake. Gerard will utilize the Caltrack application by creating a profile and then recording every meal he has per day. This way when he returns to the doctor he can show a detailed list of what type of foods Gerard consumes. 
+
+*Persona 3: A 35-year-old man named Kevin on a weight loss journey
+ Kevin works a 9-to-5 office job that demands long hours of sitting at a desk. He has struggled with his weight for most of his adult life and has recently decided to make a serious commitment to his health. Kevin is motivated to lose weight not only to improve his physical appearance but also to enhance his overall well-being and reduce the risk of health issues associated with obesity. He frequently checks his phone during short breaks throughout the day and due to his sedentary job, Kevin is conscious of the need to incorporate more physical activity into his day. Kevin will use this app to hold himself accountable for staying on his fitness journey by consuming healthy foods and working out on a healthy schedule. Kevin will enter all of his food intake and exercise into the log so he can analyze his weight loss with it. 
 
 ## Software Architecture Diagram
 
@@ -74,7 +82,7 @@ https://www.figma.com/file/9NuEtMWUnp2JaiTvXS6eNY/CS1635-Deliverable-2?type=whit
 <img width="316" alt="Screen Shot 2023-12-13 at 2 38 59 PM" src="https://github.com/shresta-kalla/caltrack/assets/150719217/26470ec6-7482-4fed-978e-ebe198fb44b4">
 
 ### Log Page
-* The log page allows the user to enter a specific date to retrieve & display their results at any given time.
+* The log page allows the user to enter a specific date to retrieve & display their results at any given time. When a user inputs a date they would like to see the log, a list will be provided with  all exercise and food consumption recorded on that day. 
 
 <img width="313" alt="Screen Shot 2023-12-13 at 2 39 18 PM" src="https://github.com/shresta-kalla/caltrack/assets/150719217/65a3408a-b2dd-4c82-a59e-d5432a45d7ce">
 
