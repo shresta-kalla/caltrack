@@ -11,7 +11,7 @@
  * Details to run key tasks are mentioned below
 
 ### Tasks
-##### Logging in: use dummy values
+##### Logging in: Use Dummy Values
   * Username: sarah02
   * Password: securePassword1
 
