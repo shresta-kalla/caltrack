@@ -5,6 +5,7 @@
 ## Running the App
  * Open Android Studio
  * Open Caltrack flutter project
+ * Click on 'Get Dependencies' to install packages
  * Connect to Android Emulator(Pixel_3s_API_34_extension_level_7)
  * Click run main.dart
  * Details to run key tasks are mentioned below
