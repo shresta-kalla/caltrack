@@ -137,13 +137,13 @@ class _LoginPageState extends State<LoginPage> {
                           _passwordController.text,
                         );
 
-                        Navigator.pop(context); // Hide loading indicator
+                        Navigator.pop(context); 
 
                         if (loginResult) {
-                          // Update the user-specific provider to indicate the user is logged in
+                         
                           userSpecificProvider.setLoggedIn(true);
 
-                          // Navigate to the AppNavigation widget and replace the current route
+                          
                           Navigator.pushReplacementNamed(
                               context, "/app_navigation");
                         } else {
@@ -193,7 +193,7 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                     GestureDetector(
                       onTap: () {
-                        // Navigate to the sign-up page
+                        
                         Navigator.pushNamed(context, signUpRoute);
                       },
                       child: const Text(
